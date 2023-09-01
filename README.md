@@ -3,54 +3,76 @@
 
 This project is a ReactJS-based clone of the Nike ecommerce website. It aims to replicate the core functionality and design of the original site, providing users with a familiar experience.
 
-DEMO : https://nike-ecommerce-clone.netlify.app/
+# :inbox_tray: Installation
 
+To run in local machine using Minikube
 
-## Features
+Install Minikube Kubectl and Docker
 
-- Product Listing: Browse a wide range of Nike Shoes.
-- Product Filtering and Sorting: Filter products by category, color, and price range.
-- Product Details: View detailed information about each product, including images, descriptions, and pricing.
-- Add to Cart: Add products to the shopping cart for later purchase.
-- Shopping Cart: Review and manage the items in the shopping cart. Update quantities, remove items, and calculate the total cost.
-- User Authentication: Create an account, log in, and log out to access personalized features such as order history and saved preferences.
-- Order Placement: Complete the checkout process by entering shipping and payment details.
-- Order History: View previous orders and track their status.
-## Tech Stack
+For Arch-Based:
 
-**Client:** ReactJS, TailwindCSS
-
-**Server:** https://nike-clone-server.onrender.com
-
-
-## Run Locally
-
-Clone the project
+-  Use an AUR helper like yay or paru
 
 ```bash
-  git clone git@github.com:SMThapa/Nike_Clone.git
+yay -Syu minikube kubectl docker
+```
+- Secondly
+```bash
+  sudo systemctl start docker
+  sudo usermod -aG docker $USER
+```    
+- Lastly
+```bash
+  minikube start --kubernetes-version=latest
 ```
 
-Go to the project directory
+ For other distributions, you can install Docker and Kubectl using your package manager.
+ 
+ And for Minikube do the following:
+
 
 ```bash
-  cd my-project
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+minikube start --kubernetes-version=latest
+
 ```
 
-Install dependencies
+# Ingress
+
+Enable ingress for DNS:
 
 ```bash
-  npm install
+ minikube addons enable ingress 
+ minikube addons enable ingress-dns
 ```
 
-Start the server
+
+
+
+# Deployment
+
+To deploy your ReactJS application with Docker and Kubernetes, you can follow these steps:
+
+Firstly:
 
 ```bash
-  npm start
+ git clone  https://github.com/mohsin-786/nike-clone-ingress.git
 ```
 
+Secondly:
+```bash
+  cd nike-clone-ingress; cd k8s
+```
 
-## Contributing
+Thirdly:
+```bash
+  kubectl apply -f <file-name>
+```
 
-Contributions to this project are welcome. If you find any issues or would like to add new features, feel free to submit a pull request. Please follow the existing code style and guidelines.
+# Using Host described in Ingress Manifest File:
+
+After the Deployment is complete do the following:
+
+
 
