@@ -2,4 +2,5 @@
 
 set -e 
 
-echo "Hi"
+stop=docker ps | awk -F " " '{print $1}'
+docker stop $stop
