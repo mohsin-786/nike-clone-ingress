@@ -1,5 +1,5 @@
 
-# :pisces: ReactJS Nike Ecommerce Clone
+# :pisces: ReactJS Nike E-commerce Clone
 
 This project is a ReactJS-based clone of the Nike ecommerce website. It aims to replicate the core functionality and design of the original site, providing users with a familiar experience.
 ![nike-clone](https://github.com/mohsin-786/nike-clone-ingress/assets/109455638/e2b8e06d-7318-4559-8904-ff6235b4bf38)
