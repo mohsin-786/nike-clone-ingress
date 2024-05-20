@@ -8,7 +8,7 @@ export const Home = () => {
   return (
     <div>
       <div className='max-sm:mt-12 max-md:mt-16 md:mt-24 py-2 text-center border border-x-0 border-gray-200' style={{backgroundColor:'#f5f3f4'}}>
-        <p>Hello Nike App</p>
+        <p>Nike Just Do It</p>
         <p className='text-xs text-gray-600'>Download app to access everything Nike. <Link to='/' className="underline">Download Now!</Link></p>
       </div>
       <div className='theContainer'>
